@@ -5,6 +5,14 @@ This development using **axios** and **Postman** for testing.
 Both **multipart** form content-type and **application/json**
 content-type input catched by **formidable**.
 
+# STARTUP SCHEMA
+First of all, run `/api/drop`, `/api/migrate`, then `/api/seed`.
+But if the tables already migrated and you want to drop it all
+using `/api/drop`, bug will happen. To solve this bug, repeat
+`/api/drop` multiple times until the schema's clear. This bug
+caused by **less precise table order** when dropping all table
+sequantially.
+
 # SCHEMA UTILITY
 Utility to control schema. Like migrate, drop, truncate, etc.
 Entry points without url params execute `all tables`, but
