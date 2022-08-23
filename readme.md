@@ -1,12 +1,11 @@
-# **Documentation Alaska Api**
-================================
+# **DOCUMENTATION**
 
-# OVERVIEW
+# Overview
 This development using **axios** and **Postman** for testing.
 Both **multipart** form content-type and **application/json**
 content-type input catched by **formidable**.
 
-# STARTUP SCHEMA
+# Startup Schema
 First of all, run `/api/drop`, `/api/migrate`, then `/api/seed`.
 But if the tables already migrated and you want to drop it all
 using `/api/drop`, bug will happen. To solve this bug, repeat
@@ -14,7 +13,7 @@ using `/api/drop`, bug will happen. To solve this bug, repeat
 caused by **less precise table order** when dropping all table
 sequantially.
 
-# SCHEMA UTILITY
+# Schema Utility
 Utility to control schema. Like migrate, drop, truncate, etc.
 Entry points without url params execute `all tables`, but
 the table list `not dynamic`. Change it on `config/config.js` file.
@@ -32,7 +31,7 @@ Execute all tables will `ignore all` error or warning.
 | **GET** | `/api/seed` | |
 | **GET** | `/api/seed/:table` | `table` |
 
-# AUTH
+# Auth
 Not require **json web token**. Create new user,
 or authenticate user to access api with **json web token**.
 
@@ -43,7 +42,7 @@ or authenticate user to access api with **json web token**.
 | **POST** | `/register` | `all user columns` |
 | **POST** | `/verify` | `check jwt token` |
 
-# USER
+# User
 Require **json web token** to access.
 Control user profile, except create new user.
 
@@ -72,7 +71,7 @@ Control user profile, except create new user.
 | `hp` | varchar(255) DEFAULT NULL |
 | `role_id` | int(10) unsigned DEFAULT `1` |
 
-# ROLE
+# Role
 ***!!! RESTRIECTED MODEL !!!***
 
 ### ENTRY POINTS
@@ -91,7 +90,7 @@ Control user profile, except create new user.
 | `2` | `guru` |
 | `3` | `admin` |
 
-# MODUL
+# Modul
 Require **json web token** to access.
 Modul have **type** that contain type of modul.
 Change **:type** url with ***ebook*** or ***video*** only.
@@ -122,7 +121,7 @@ Change **:type** url with ***ebook*** or ***video*** only.
 | `created_at` | timestamp NOT NULL DEFAULT current_timestamp() |
 | `updated_at` | timestamp NOT NULL DEFAULT current_timestamp() |
 
-# ABSEN
+# Absen
 Not require **json web token** to access. Embeded automatically
 when user login or accessing `/login` successfully.
 
@@ -144,7 +143,7 @@ when user login or accessing `/login` successfully.
 | `tanggal` | timestamp NOT NULL DEFAULT current_timestamp() |
 | `user_id` | int(10) unsigned DEFAULT NULL |
 
-# LITERASI
+# Literasi
 Require **json web token** to access. The entry points
 same as absen.
 
