@@ -1,6 +1,6 @@
 .gitignore
 node_modules/
-storage/avatar/
-storage/literasi/
-storage/modul/
-storage/thumbnail/
+storage/avatar/*
+storage/literasi/*
+storage/modul/*
+storage/thumbnail/*
