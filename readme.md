@@ -1,4 +1,4 @@
-# **DOCUMENTATION**
+# **Documentation**
 
 # Overview
 This development using **axios** and **Postman** for testing.
@@ -19,7 +19,7 @@ Entry points without url params execute `all tables`, but
 the table list `not dynamic`. Change it on `config/config.js` file.
 Execute all tables will `ignore all` error or warning.
 
-### ENTRY POINTS
+### Entry Points
 | Method | URL | URL Params |
 | ------ | --- | ---------- |
 | **GET** | `/api/migrate` | |
@@ -35,7 +35,7 @@ Execute all tables will `ignore all` error or warning.
 Not require **json web token**. Create new user,
 or authenticate user to access api with **json web token**.
 
-### ENTRY POINTS
+### Entry Points
 | Method | URL | Body Params |
 | ------ | --- | ------ |
 | **POST** | `/login` | `nis, password` |
@@ -46,7 +46,7 @@ or authenticate user to access api with **json web token**.
 Require **json web token** to access.
 Control user profile, except create new user.
 
-### ENTRY POINTS
+### Entry Points
 | Method | URL | URL Params | Body Params |
 | ------ | --- | ---------- | ----------- |
 | **GET** | `/user` | `?page&select` | |
@@ -56,7 +56,7 @@ Control user profile, except create new user.
 | **PUT** | `/user/:id` | `id` | `all modul columns` |
 | **DELETE** | `/user/:id` | `id` | |
 
-### TABLE SCHEMA
+### Table Schema
 | Name | Options |
 | ---- | ------- |
 | `id` | int(10) unsigned NOT NULL AUTO_INCREMENT |
@@ -74,16 +74,16 @@ Control user profile, except create new user.
 # Role
 ***!!! RESTRIECTED MODEL !!!***
 
-### ENTRY POINTS
+### Entry Points
 ***!!! THIS MODEL DO NOT HAVE ENTRY POINTS !!!***
 
-### TABLE SCHEMA
+### Table Schema
 | Name | Options |
 | ---- | ------- |
 | `id` | int(10) unsigned NOT NULL AUTO_INCREMENT |
 | `name` | varchar(255) DEFAULT NULL |
 
-### TABLE CONTENTS
+### Table Contents
 | Id | Name |
 | -- | ---- |
 | `1` | `siswa` |
@@ -95,7 +95,7 @@ Require **json web token** to access.
 Modul have **type** that contain type of modul.
 Change **:type** url with ***ebook*** or ***video*** only.
 
-### ENTRY POINTS
+### Entry Points
 | Method | URL | URL Params | Body Params |
 | ------ | --- | ---------- | ----------- |
 | **GET** | `/modul` | `?search&page&select` | |
@@ -107,7 +107,7 @@ Change **:type** url with ***ebook*** or ***video*** only.
 | **PUT** | `/:type/:id` | `id` | `all modul columns` |
 | **DELETE** | `/:type/:id` | `id` | |
 
-### TABLE SCHEMA
+### Table Schema
 | Name | Options |
 | --- | --- |
 | `id` | int(10) unsigned NOT NULL AUTO_INCREMENT |
@@ -125,7 +125,7 @@ Change **:type** url with ***ebook*** or ***video*** only.
 Not require **json web token** to access. Embeded automatically
 when user login or accessing `/login` successfully.
 
-### ENTRY POINTS
+### Entry Points
 | Method | URL | URL Params | Body Params |
 | ------ | --- | ---------- | ----------- |
 | **GET** | `/absen` | `?page&select` | |
@@ -136,7 +136,7 @@ when user login or accessing `/login` successfully.
 | **PUT** | `/absen/:id` | `id` | `all absen columns` |
 | **DELETE** | `/absen/:id` | `id` | |
 
-### TABLE SCHEMA
+### Table Schema
 | Name | Options |
 | --- | --- |
 | `id` | int(10) unsigned NOT NULL AUTO_INCREMENT |
@@ -147,7 +147,7 @@ when user login or accessing `/login` successfully.
 Require **json web token** to access. The entry points
 same as absen.
 
-### ENTRY POINTS
+### Entry Points
 | Method | URL | URL Params | Body Params |
 | ------ | --- | ---------- | ----------- |
 | **GET** | `/literasi` | `?page&select` | |
@@ -158,7 +158,7 @@ same as absen.
 | **PUT** | `/literasi/:id` | `id` | `all literasi columns` |
 | **DELETE** | `/literasi/:id` | `id` | |
 
-### TABLE SCHEMA
+### Table Schema
 | Name | Options |
 | --- | --- |
 | `id` | int(10) unsigned NOT NULL AUTO_INCREMENT |
