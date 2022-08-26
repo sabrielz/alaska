@@ -24,6 +24,5 @@ class BaseModel extends Model {
 }
 
 BaseModel.knex(knex);
-// BaseModel.query().
 
 module.exports = BaseModel;

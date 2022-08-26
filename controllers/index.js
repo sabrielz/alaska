@@ -7,3 +7,4 @@ module.exports.helper = helpers.schema;
 module.exports.helpers = helpers;
 module.exports.query = query.schema;
 module.exports.requery = helpers.requery;
+module.exports.utility = helpers.utility;

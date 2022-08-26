@@ -1,12 +1,13 @@
 const { IncomingForm } = require('formidable');
 const { path, fs } = require('./');
+const { utility } = require('../helpers');
 const crypto = require('crypto');
 
 const form = new IncomingForm({
 	multiples: true,
 });
 
-form.xupload = (res, file, subfolder) => {
+form.xupload = (res, file, subfolder, next) => {
 	let xparse = file.originalFilename.split('.');
 	let xext = xparse[xparse.length-1];
 	let xrand = crypto.randomBytes(32).toString('hex');
@@ -22,6 +23,7 @@ form.xupload = (res, file, subfolder) => {
 		})
 	})
 
+	if (next) return next(subfolder+'/'+xname);
 	return subfolder+'/'+xname;
 }
 
@@ -39,7 +41,10 @@ form.xparse = (req, res, next) => {
 			err: err
 		})
 
-		next(fields, files);
+		if (utility.isPromise(next)) {
+			return next(fields, files).then(data => data);
+		} else return next(fields, files);
+
 	})
 }
 

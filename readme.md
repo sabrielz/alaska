@@ -20,16 +20,17 @@ the table list `not dynamic`. Change it on `config/config.js` file.
 Execute all tables will `ignore all` error or warning.
 
 ### Entry Points
-| Method | URL | URL Params |
-| ------ | --- | ---------- |
-| **GET** | `/api/migrate` | |
+| Method | URL | URL Params | Body Params |
+| ------ | --- | ---------- | ----------- |
+| **GET** | `/api/migrate` |
 | **GET** | `/api/migrate/:table` | `table` |
-| **GET** | `/api/drop` | |
+| **GET** | `/api/drop` |
 | **GET** | `/api/drop/:table` | `table` |
-| **GET** | `/api/truncate` | |
+| **GET** | `/api/truncate` |
 | **GET** | `/api/truncate/:table` | `table` |
-| **GET** | `/api/seed` | |
+| **GET** | `/api/seed` |
 | **GET** | `/api/seed/:table` | `table` |
+| **POST** | `/api/import/:table` | `table` | `file: <file>, headers: 'nama,email'}`
 
 # Auth
 Not require **json web token**. Create new user,

@@ -20,4 +20,6 @@ module.exports = app => {
 
 	app.get('/api/seed/:table', Controller.seed);
 
+	app.post('/api/import/:table', Controller.import);
+
 }
